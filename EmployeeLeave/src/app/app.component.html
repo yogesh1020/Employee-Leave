@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+    <form [formGroup]="emoloyeeFormGroup" >
+      <table>
+        <tr>
+          <td>Name</td>
+          <td> <input type="text" formControlName="name"></td>
+        </tr>
+        <tr>
+          <td>Start Date</td>
+          <td> <input type="date" (change)="dateStart($event)"> </td>
+        </tr>
+        <tr>
+          <td>End Date</td>
+          <td> <input type="date"  (change)="dateEnd($event)"></td>
+        </tr>
+      </table>
+      <button [routerLink]="['']" routerLinkActive="router-link-active"  (click)="submit()" >Submit</button>
+      <button [routerLink]="['/leaveList']" routerLinkActive="router-link-active" >Leave Status</button>
+    </form>
+  </body>
+</html>
+<router-outlet></router-outlet>
